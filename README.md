@@ -11,7 +11,7 @@ AI-powered multilingual banking assistant for digital adoption, fraud protection
 
 - The platform helps users perform banking activities confidently through voice assistance, fraud detection, scam alerts, and step-by-step digital banking guidance.
 
----
+--------------------------------
 
 # 🎯 Problem Statement
 
