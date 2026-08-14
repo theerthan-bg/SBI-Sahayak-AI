@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SBI Sahayak AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        SBI <span>Sahayak AI</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#assistant">AI Assistant</a>
+        <a href="#scanner">Scam Shield</a>
+        <a href="#services">Services</a>
+    </nav>
+
+    <button id="seniorModeBtn" class="senior-btn">
+        Senior Mode
+    </button>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                AI-POWERED BANKING ASSISTANT
+            </div>
+
+            <h1>
+                Banking made
+                <span>simple.</span>
+            </h1>
+
+            <p>
+                SBI Sahayak AI helps you understand digital banking,
+                identify scams and learn banking services through
+                simple text and voice guidance.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button onclick="scrollToSection('assistant')">
+                    Ask Sahayak AI
+                </button>
+
+                <button class="secondary"
+                        onclick="startVoice()">
+                    🎤 Voice Assistant
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="shield">
+                🛡️
+            </div>
+
+            <h3>
+                AI Scam Shield
+            </h3>
+
+            <p>
+                Check suspicious messages and links
+                before taking action.
+            </p>
+
+            <div class="security-status">
+                <span></span>
+                Protection Active
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LANGUAGE -->
+
+    <section class="language-section">
+
+        <h2>Choose your language</h2>
+
+        <div class="languages">
+
+            <button onclick="setLanguage('English')">
+                English
+            </button>
+
+            <button onclick="setLanguage('ಕನ್ನಡ')">
+                ಕನ್ನಡ
+            </button>
+
+            <button onclick="setLanguage('हिन्दी')">
+                हिन्दी
+            </button>
+
+        </div>
+
+        <p id="languageStatus">
+            Current language: English
+        </p>
+
+    </section>
+
+
+    <!-- AI ASSISTANT -->
+
+    <section id="assistant" class="assistant-section">
+
+        <div class="section-title">
+
+            <span>AI BANKING COACH</span>
+
+            <h2>
+                How can Sahayak help you?
+            </h2>
+
+        </div>
+
+
+        <div class="chat-container">
+
+            <div id="chatMessages" class="chat-messages">
+
+                <div class="message bot">
+
+                    <div class="avatar">
+                        🤖
+                    </div>
+
+                    <div>
+                        Hello! I'm SBI Sahayak AI.
+                        <br>
+                        Ask me about UPI, ATM, banking
+                        or digital safety.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button onclick="quickQuestion('How can I use UPI safely?')">
+                    UPI Safety
+                </button>
+
+                <button onclick="quickQuestion('How do I use an ATM?')">
+                    ATM Help
+                </button>
+
+                <button onclick="quickQuestion('How can I avoid online scams?')">
+                    Fraud Safety
+                </button>
+
+                <button onclick="quickQuestion('What is internet banking?')">
+                    Internet Banking
+                </button>
+
+            </div>
+
+
+            <div class="chat-input">
+
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask your banking question..."
+                    onkeydown="handleEnter(event)"
+                >
+
+                <button onclick="sendMessage()">
+                    Send
+                </button>
+
+                <button onclick="startVoice()">
+                    🎤
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCAM SHIELD -->
+
+    <section id="scanner" class="scanner-section">
+
+        <div class="section-title">
+
+            <span>AI SCAM SHIELD</span>
+
+            <h2>
+                Check before you trust
+            </h2>
+
+            <p>
+                Paste a suspicious SMS, WhatsApp message,
+                email or URL below.
+            </p>
+
+        </div>
+
+
+        <div class="scanner">
+
+            <textarea
+                id="scamInput"
+                placeholder="Example: URGENT! Your account has been blocked. Click here to verify..."
+            ></textarea>
+
+
+            <button onclick="scanScam()">
+                🔍 Analyse for Scam
+            </button>
+
+
+            <div id="scanResult" class="scan-result">
+
+                <div class="empty-result">
+                    Security analysis will appear here.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services" class="services-section">
+
+        <div class="section-title">
+
+            <span>DIGITAL BANKING</span>
+
+            <h2>
+                Banking guidance
+            </h2>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📱
+                </div>
+
+                <h3>UPI</h3>
+
+                <p>
+                    Learn how to send and receive
+                    money safely using UPI.
+                </p>
+
+                <button onclick="quickQuestion('How can I use UPI safely?')">
+                    Learn
+                </button>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🏧
+                </div>
+
+                <h3>ATM</h3>
+
+                <p>
+                    Step-by-step guidance for
+                    using an ATM safely.
+                </p>
+
+                <button onclick="quickQuestion('How do I use an ATM?')">
+                    Learn
+                </button>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🌐
+                </div>
+
+                <h3>Internet Banking</h3>
+
+                <p>
+                    Understand online banking
+                    and important security practices.
+                </p>
+
+                <button onclick="quickQuestion('What is internet banking?')">
+                    Learn
+                </button>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔐
+                </div>
+
+                <h3>Fraud Protection</h3>
+
+                <p>
+                    Learn how to identify phishing,
+                    OTP scams and fake links.
+                </p>
+
+                <button onclick="quickQuestion('How can I avoid online scams?')">
+                    Learn
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        SBI <span>Sahayak AI</span>
+    </div>
+
+    <p>
+        AI-powered digital banking guidance.
+    </p>
+
+    <small>
+        Demo / Hackathon Prototype — Not an official SBI banking application.
+    </small>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
