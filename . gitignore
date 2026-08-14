@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+
+.venv/
+venv/
+env/
+
+sahayak.db
+
+.env
+
+node_modules/
+
+.DS_Store
+
+.vscode/
+.idea/
